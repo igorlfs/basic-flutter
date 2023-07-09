@@ -2,6 +2,8 @@ import 'package:course/app_controller.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
   State<HomePage> createState() {
     return HomePageState();
@@ -22,13 +24,13 @@ class HomePageState extends State<HomePage> {
                 borderRadius: BorderRadius.circular(40),
                 child: Image.asset('assets/images/luisal.jpg'),
               ),
-              accountName: Text('Luis Inácio'),
-              accountEmail: Text('O Deus dos Algoritmos'),
+              accountName: const Text('Luis Inácio'),
+              accountEmail: const Text('O Deus dos Algoritmos'),
             ),
             ListTile(
-              leading: Icon(Icons.home),
-              title: Text('Logout'),
-              subtitle: Text('Finalizar sessão'),
+              leading: const Icon(Icons.home),
+              title: const Text('Logout'),
+              subtitle: const Text('Finalizar sessão'),
               onTap: () {
                 Navigator.of(context).pushReplacementNamed('/');
               },
@@ -38,7 +40,7 @@ class HomePageState extends State<HomePage> {
       ),
       appBar: AppBar(
         title: const Text("Home Page"),
-        actions: [
+        actions: const [
           CustomSwitch(),
         ],
       ),
@@ -50,14 +52,14 @@ class HomePageState extends State<HomePage> {
           });
         },
       ),
-      body: Container(
+      body: SizedBox(
         width: double.infinity,
         height: double.infinity,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('Contador: $counter'),
-            CustomSwitch(),
+            const CustomSwitch(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -87,6 +89,8 @@ class HomePageState extends State<HomePage> {
 }
 
 class CustomSwitch extends StatelessWidget {
+  const CustomSwitch({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Switch(
